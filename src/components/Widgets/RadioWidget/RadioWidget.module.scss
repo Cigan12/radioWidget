@@ -1,0 +1,36 @@
+@import '../../../static/styles/variables';
+
+.Main {
+    height: 505px;
+    width: 320px;
+    background: linear-gradient(180deg, $dark-blue-700, $dark-blue-800 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.2);
+}
+
+.Header {
+    height: 80px;
+    background-color: $orange;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: max-content 1fr max-content;
+    padding: 0 20px;
+}
+
+.Title {
+    font: $bold-font;
+    color: $white;
+    text-transform: uppercase;
+}
+
+.ArrowLeft {
+    max-height: 22px;
+    cursor: pointer;
+}
+
+.PowerOff {
+    max-height: 26px;
+    cursor: pointer;
+}
