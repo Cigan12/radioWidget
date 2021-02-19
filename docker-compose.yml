@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    front:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        stdin_open: true
+        ports:
+            - '3000:3000'
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+        volumes:
+            - ./:/vote
+            - /RadioWidget/node_modules
+        command: yarn start

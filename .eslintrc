@@ -1,0 +1,10 @@
+{
+    "extends": ["react-app", "airbnb-typescript"],
+    "rules": {},
+    "overrides": [
+        {
+            "files": ["**/*.ts?(x)"],
+            "rules": {}
+        }
+    ]
+}

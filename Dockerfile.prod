@@ -1,0 +1,11 @@
+FROM node:14
+
+WORKDIR /RadioWidget
+
+COPY . .
+
+RUN rm -rf node_modules && yarn install --frozen-lockfile
+
+RUN yarn global add serve
+
+RUN yarn build
