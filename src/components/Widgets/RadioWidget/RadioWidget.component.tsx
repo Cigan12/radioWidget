@@ -17,6 +17,11 @@ export const RadioWidget: React.FC<IRadioWidgetProps> = () => {
                     alt="power off"
                 />
             </div>
+            <div></div>
+            <div className={styles.Footer}>
+                <p className={styles.CurrentlyPlaying}>CURRENTLY PLAYING</p>
+                <p className={styles.StationName}>Dribbble FM</p>
+            </div>
         </div>
     );
 };

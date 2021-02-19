@@ -3,10 +3,13 @@
 .Main {
     height: 505px;
     width: 320px;
-    background: linear-gradient(180deg, $dark-blue-700, $dark-blue-800 100%);
+    background: linear-gradient(180deg, $dark-blue-700 30%, $dark-blue-800 80%);
     border-radius: 24px;
     overflow: hidden;
     box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 30px 20px -20px $black;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
 }
 
 .Header {
@@ -27,10 +30,34 @@
 
 .ArrowLeft {
     max-height: 22px;
+    width: 13px;
     cursor: pointer;
 }
 
 .PowerOff {
     max-height: 26px;
+
     cursor: pointer;
+}
+
+.Footer {
+    height: 80px;
+    background-color: $dark-blue-800;
+    border-top: 1px solid $gray;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: max-content max-content;
+}
+
+.CurrentlyPlaying {
+    font: $bold-font;
+    color: $orange;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding-top: 19px;
+}
+
+.StationName {
+    font: $regular-font;
+    color: $gray;
 }
