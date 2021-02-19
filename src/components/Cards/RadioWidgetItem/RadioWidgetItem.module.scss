@@ -1,0 +1,70 @@
+@import '../../../static/styles/variables';
+
+.Item {
+    border-bottom: 1px solid $gray;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    justify-items: end;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.Name {
+    font: $regular-font;
+    color: $gray;
+}
+
+.Frequency {
+    font: $bold-font;
+    color: $gray;
+}
+
+.Dropdown {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    justify-items: center;
+    align-items: center;
+
+    transition: 0.3s all;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition-delay: 0s;
+}
+
+.ControlButton {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.Image {
+    max-width: 140px;
+    border: 2px solid $gray;
+    border-radius: 50%;
+}
+
+.Common {
+    transition: 1s all;
+    height: 37px;
+    display: grid;
+    align-items: end;
+
+    &.active {
+        height: 211px;
+
+        .Dropdown {
+            display: grid;
+            opacity: 1;
+            height: auto;
+            padding-bottom: 30px;
+            transition-delay: 0.8s;
+            visibility: visible;
+        }
+    }
+    &:last-child {
+        .Item {
+            border: none;
+        }
+    }
+}

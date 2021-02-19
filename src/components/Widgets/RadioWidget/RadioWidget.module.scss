@@ -61,3 +61,38 @@
     font: $regular-font;
     color: $gray;
 }
+
+.Content {
+    padding: 31px 20px 0 20px;
+
+    overflow: overlay;
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: #1f1f27;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #16161d;
+        border-radius: 10px;
+        transition: 0.2s;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #0a0a0e;
+    }
+}
+
+.RadioItems {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: grid;
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+    grid-gap: 20px;
+}
