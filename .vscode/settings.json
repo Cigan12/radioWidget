@@ -1,0 +1,48 @@
+{
+    "files.autoSave": "onFocusChange",
+    "git.autofetch": true,
+    "window.zoomLevel": 0,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "vue",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "typescript"
+    ],
+    "eslint.format.enable": true,
+    "eslint.run": "onSave",
+
+    "editor.formatOnSave": true,
+    "git.suggestSmartCommit": false,
+    "editor.minimap.enabled": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "explorer.confirmDragAndDrop": false,
+
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "editor.tabSize": 4,
+
+    "prettier.tabWidth": 4,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "vetur.format.enable": true,
+
+    "debug.javascript.pickAndAttachOptions": {}
+}

@@ -8,7 +8,11 @@ interface IRadioWidgetItemProps {
     name: string;
     active?: boolean;
     image: HTMLImageElement['src'];
-    onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    onClick?: (
+        event:
+            | React.MouseEvent<HTMLDivElement, MouseEvent>
+            | React.KeyboardEvent<HTMLDivElement>
+    ) => void;
 }
 
 export const RadioWidgetItem: React.FC<IRadioWidgetItemProps> = ({
@@ -31,7 +35,7 @@ export const RadioWidgetItem: React.FC<IRadioWidgetItemProps> = ({
                     className={styles.Image}
                     src={image}
                     alt="station avatar"
-                ></img>
+                />
                 <img
                     src={Increase}
                     className={styles.ControlButton}
@@ -39,7 +43,13 @@ export const RadioWidgetItem: React.FC<IRadioWidgetItemProps> = ({
                 />
             </div>
 
-            <div className={styles.Item} onClick={onClick}>
+            <div
+                className={styles.Item}
+                onClick={onClick}
+                onKeyDown={onClick}
+                role="button"
+                tabIndex={-2}
+            >
                 <p className={styles.Name}>{name}</p>
                 <p className={styles.Frequency}>{frequency}</p>
             </div>
