@@ -6,10 +6,8 @@ import { RadioWidgetItem } from '../../Cards/RadioWidgetItem/RadioWidgetItem.com
 import styles from './RadioWidget.module.scss';
 import itemAvatar from '../../../static/images/RadioWidget/radioAvatar.png';
 import { TStore } from '../../../store';
-import {
-    SET_CURRENT_STATION,
-    TRadioWidgetActions,
-} from '../../../reducers/RadioWidgetReducer/RadioWidget.types';
+import { TRadioWidgetActions } from '../../../reducers/RadioWidgetReducer/RadioWidget.types';
+import { SetCurrentStation } from '../../../reducers/RadioWidgetReducer/RadioWidget.actions';
 
 interface IRadioWidgetProps {}
 
@@ -40,10 +38,7 @@ export const RadioWidget: React.FC<IRadioWidgetProps> = () => {
                                 frequency={station.frequency}
                                 name={station.name}
                                 onClick={() =>
-                                    dispatch({
-                                        type: SET_CURRENT_STATION,
-                                        payload: station,
-                                    })
+                                    dispatch(SetCurrentStation(station))
                                 }
                                 image={itemAvatar}
                             />
