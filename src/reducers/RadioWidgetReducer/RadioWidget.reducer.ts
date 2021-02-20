@@ -1,4 +1,3 @@
-import Avatar from '../../static/images/RadioWidget/radioAvatar.png';
 import {
     GET_STATIONS,
     IRadioWidgetState,
@@ -9,14 +8,7 @@ import {
 
 const initialRadioWidgetState: IRadioWidgetState = {
     currentStation: null,
-    stations: [
-        {
-            frequency: '66,6',
-            id: 1,
-            image: Avatar,
-            name: 'Putin FM',
-        },
-    ],
+    stations: [],
     isLoading: false,
 };
 
