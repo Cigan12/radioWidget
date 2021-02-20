@@ -1,7 +1,10 @@
 name: learn-github-actions
 on: [push]
 jobs:
-    echo:
+    deploy:
         runs-on: self-hosted
         steps:
-            - run: mkdir uniqueFolderVery
+            - run: git pull origin master
+            - run: sudo docker-compose -f docker-compose.prod.yml up --build -d
+            - run: sudo docker image prune --force
+            - run: sudo docker system prune --force
