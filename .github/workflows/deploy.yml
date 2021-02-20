@@ -4,4 +4,4 @@ jobs:
     echo:
         runs-on: self-hosted
         steps:
-            - run: ls
+            - run: mkdir test
