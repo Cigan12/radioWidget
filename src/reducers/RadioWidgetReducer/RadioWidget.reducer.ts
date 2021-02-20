@@ -11,10 +11,10 @@ const initialRadioWidgetState: IRadioWidgetState = {
     currentStation: null,
     stations: [
         {
-            frequency: '',
+            frequency: '66,6',
             id: 1,
             image: Avatar,
-            name: '',
+            name: 'Putin FM',
         },
     ],
     isLoading: false,

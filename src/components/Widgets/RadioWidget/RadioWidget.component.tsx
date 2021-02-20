@@ -37,8 +37,8 @@ export const RadioWidget: React.FC<IRadioWidgetProps> = () => {
                                     !!state.currentStation &&
                                     state.currentStation.id === station.id
                                 }
-                                frequency="66,6"
-                                name="Putin FM"
+                                frequency={station.frequency}
+                                name={station.name}
                                 onClick={() =>
                                     dispatch({
                                         type: SET_CURRENT_STATION,
@@ -51,8 +51,16 @@ export const RadioWidget: React.FC<IRadioWidgetProps> = () => {
                 </ul>
             </div>
             <div className={styles.Footer}>
-                <p className={styles.CurrentlyPlaying}>CURRENTLY PLAYING</p>
-                <p className={styles.StationName}>Dribbble FM</p>
+                {state.currentStation && (
+                    <>
+                        <p className={styles.CurrentlyPlaying}>
+                            CURRENTLY PLAYING
+                        </p>
+                        <p className={styles.StationName}>
+                            {state.currentStation.name}
+                        </p>
+                    </>
+                )}
             </div>
         </div>
     );
