@@ -1,9 +1,9 @@
-import { AnyAction } from '@reduxjs/toolkit';
-import Avatar from '../static/images/RadioWidget/radioAvatar.png';
+import Avatar from '../../static/images/RadioWidget/radioAvatar.png';
 import {
     GET_STATIONS,
     IRadioWidgetState,
-    TOGGLE_STATION,
+    RADIO_STATIONS_FETCH_STARTED,
+    SET_CURRENT_STATION,
     TRadioWidgetActions,
 } from './RadioWidget.types';
 
@@ -11,7 +11,6 @@ const initialRadioWidgetState: IRadioWidgetState = {
     currentStation: null,
     stations: [
         {
-            active: false,
             frequency: '',
             id: 1,
             image: Avatar,
@@ -23,28 +22,30 @@ const initialRadioWidgetState: IRadioWidgetState = {
 
 export const RadioWidgetReducer = (
     state = initialRadioWidgetState,
-    action: TRadioWidgetActions | AnyAction
+    action: TRadioWidgetActions
 ): IRadioWidgetState => {
     switch (action.type) {
+        case RADIO_STATIONS_FETCH_STARTED:
+            return {
+                ...state,
+                isLoading: true,
+            };
         case GET_STATIONS:
             return {
                 ...state,
                 isLoading: false,
                 stations: action.payload,
             };
-        case TOGGLE_STATION:
+        case SET_CURRENT_STATION:
+            if (
+                state.currentStation &&
+                state.currentStation.id === action.payload.id
+            ) {
+                return { ...state, currentStation: null };
+            }
             return {
                 ...state,
-                stations: state.stations.map((station) => {
-                    if (station.id !== action.payload.id) {
-                        return station;
-                    }
-
-                    return {
-                        ...station,
-                        active: !station.active,
-                    };
-                }),
+                currentStation: action.payload,
             };
         default:
             return state;

@@ -7,9 +7,9 @@ import styles from './RadioWidget.module.scss';
 import itemAvatar from '../../../static/images/RadioWidget/radioAvatar.png';
 import { TStore } from '../../../store';
 import {
-    TOGGLE_STATION,
+    SET_CURRENT_STATION,
     TRadioWidgetActions,
-} from '../../../reducers/RadioWidget.types';
+} from '../../../reducers/RadioWidgetReducer/RadioWidget.types';
 
 interface IRadioWidgetProps {}
 
@@ -33,15 +33,16 @@ export const RadioWidget: React.FC<IRadioWidgetProps> = () => {
                         state.stations.map((station) => (
                             <RadioWidgetItem
                                 key={station.id}
-                                active={station.active}
+                                active={
+                                    !!state.currentStation &&
+                                    state.currentStation.id === station.id
+                                }
                                 frequency="66,6"
                                 name="Putin FM"
                                 onClick={() =>
                                     dispatch({
-                                        type: TOGGLE_STATION,
-                                        payload: {
-                                            id: station.id,
-                                        },
+                                        type: SET_CURRENT_STATION,
+                                        payload: station,
                                     })
                                 }
                                 image={itemAvatar}

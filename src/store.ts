@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { RadioWidgetReducer } from './reducers/RadioWidget.reducer';
+import { RadioWidgetReducer } from './reducers/RadioWidgetReducer/RadioWidget.reducer';
 
 export const store = configureStore({
     reducer: { RadioWidgetReducer },
