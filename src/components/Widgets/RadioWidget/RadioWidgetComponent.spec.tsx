@@ -1,7 +1,5 @@
 import React from 'react';
-
-import { render } from '../../utils/Redux.provider';
-
+import { render } from '../../utils/Redux.util';
 import { RadioWidget } from './RadioWidget.component';
 
 test('Renders radio widget correctly', () => {

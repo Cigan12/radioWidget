@@ -49,7 +49,7 @@ const fetchStations = async () => {
     return r;
 };
 
-function* getStations() {
+export function* getStations() {
     try {
         const stations = yield call(fetchStations);
         yield put<TRadioWidgetActions>(GetRadioStations(stations));
