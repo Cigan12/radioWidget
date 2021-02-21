@@ -14,6 +14,7 @@ interface IRadioWidgetProps {}
 export const RadioWidget: React.FC<IRadioWidgetProps> = () => {
     const state = useSelector((store: TStore) => store.RadioWidgetReducer);
     const dispatch = useDispatch<Dispatch<TRadioWidgetActions>>();
+
     return (
         <div className={styles.Main}>
             <div className={styles.Header}>

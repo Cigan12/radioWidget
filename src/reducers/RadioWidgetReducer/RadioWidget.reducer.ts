@@ -6,7 +6,7 @@ import {
     TRadioWidgetActions,
 } from './RadioWidget.types';
 
-const initialRadioWidgetState: IRadioWidgetState = {
+export const initialRadioWidgetState: IRadioWidgetState = {
     currentStation: null,
     stations: [],
     isLoading: false,
